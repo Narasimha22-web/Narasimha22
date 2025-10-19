@@ -1,0 +1,264 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  scroll-behavior: smooth;
+
+  /* Animated gradient background */
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Particles container */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* stay behind everything */
+}
+
+/* Header (navbar container) */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(51, 51, 51, 0.8); /* semi-transparent */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+header.scrolled {
+  background: rgba(0, 119, 204, 0.85);
+}
+
+/* Logo */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Navbar links */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: yellow;
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Home Section Centering */
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-content {
+  max-width: 800px;
+}
+
+.my-name {
+  font-size: 48px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.wave-text {
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: #f0f0f0;
+}
+
+/* About Section */
+#about {
+  padding: 80px 15%;
+  text-align: left;
+}
+
+#about h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: yellow;
+}
+
+#about p {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+#about b {
+  color: #ffcc00;
+}
+
+/* Services Section */
+#services {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+#services h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: yellow;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Service Cards */
+.service-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.service-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #ffcc00;
+}
+
+.service-card p {
+  font-size: 16px;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+/* Contact Section */
+#contact {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: yellow;
+}
+
+.contact-card {
+  max-width: 500px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.contact-card input,
+.contact-card textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.contact-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: yellow;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-card button:hover {
+  background: orange;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(68, 68, 68, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
